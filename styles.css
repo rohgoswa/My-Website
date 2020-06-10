@@ -10,11 +10,10 @@ div {
 
 h1 {
   font-size: 5.625rem;
-  margin-top: 50px;
   font-family: 'Sacramento', cursive;
   color: #66BFBF;
-  margin-bottom: 10px;
-  margin-top: 15px;
+  width: 50%;
+  margin: 15px auto 10px auto ;
 }
 
 h2 {
@@ -58,8 +57,8 @@ p {
 }
 .top-cloud {
   position: absolute;
-  right: 22%;
-  top: 7%;
+  right: 20%;
+  top: 9%;
 }
 .birds{
   width: 15%;
