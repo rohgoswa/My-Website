@@ -54,8 +54,8 @@ p {
 .bottom-cloud {
 
   position: absolute;
-  bottom: 250px;
-  left: 250px;
+  bottom: 15.6rem;
+  left: 15.6rem;
 }
 .birds{
   width: 15%;
@@ -67,8 +67,8 @@ p {
 .top-cloud {
 
   position: absolute;
-  right: 300px;
-  top: 40px;
+  right: 18.75rem;
+  top: 2.5rem;
 }
 
 .mountain {
