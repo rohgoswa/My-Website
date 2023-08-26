@@ -97,6 +97,17 @@ p {
   width: 30%;
   float: right;
 }
+.Academic{
+  border-readius: 100%
+  width: 30%
+  float: left
+}
+.books{
+  border-readius: 100%
+  width: 30%
+  float: right
+}
+  
 
 
 
