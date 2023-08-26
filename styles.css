@@ -97,15 +97,18 @@ p {
   width: 30%;
   float: right;
 }
-.Academic{
-  border-readius: 100%
-  width: 30%
-  float: left
-}
+.academic{
+  border-radius: 100%;
+  width: 45%;
+  float: right;
+  padding-right: 30px;
+  text-align: left;
 .books{
-  border-readius: 100%
-  width: 30%
-  float: right
+  border-radius: 100%;
+  width: 25%;
+  float: left;
+  padding-right: 30px;
+  text-align: right;
 }
 
 .top-container {
