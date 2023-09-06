@@ -97,6 +97,13 @@ p {
   width: 30%;
   float: right;
 }
+.research{
+  border-radius: 100%;
+  width: 45%;
+  float: right;
+  padding-right: 30px;
+  text-align: left;
+}
 .academic{
   border-radius: 100%;
   width: 45%;
