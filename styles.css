@@ -118,6 +118,13 @@ p {
   padding-right: 30px;
   text-align: right;
 }
+.Seminars{
+  border-radius: 100%;
+  width: 25%;
+  float: right;
+  padding-right: 30px;
+  text-align: right;
+}
 
 .top-container {
   background-color: #e4f9f5;
