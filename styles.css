@@ -92,6 +92,9 @@ p {
   float: left;
   padding-right: 30px;
 }
+.bike-para{
+  line-height: 1.9;
+}
 .coding{
   border-radius: 100%;
   width: 30%;
