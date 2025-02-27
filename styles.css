@@ -77,7 +77,7 @@ p {
 
 .hacking {
   border-radius: 100%;
-  width: 15%;
+  width: 25%;
   float: left;
   padding-right: 30px;
   text-align: right;
@@ -99,7 +99,7 @@ p {
 }
 .research{
   border-radius: 100%;
-  width: 35%;
+  width: 30%;
   float: right;
   padding-right: 30px;
   text-align: left;
