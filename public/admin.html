@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin - My Website</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* small admin styles */
+    .container { max-width: 900px; margin: 2rem auto; padding: 1rem; }
+    .row { display:flex; gap:1rem; }
+    textarea { width:100%; min-height:200px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Admin</h1>
+    <div>
+      <label>Admin password: <input id="pass" type="password"></label>
+      <button id="login">Unlock</button>
+    </div>
+    <hr>
+    <div id="app" style="display:none;">
+      <h2>Create Post</h2>
+      <input id="title" placeholder="Title"><br>
+      <input id="slug" placeholder="slug"><br>
+      <input id="excerpt" placeholder="Excerpt"><br>
+      <div id="editor" contenteditable="true" style="min-height:150px;border:1px solid #ddd;padding:8px"></div>
+      <button id="savePost">Save Post</button>
+      <hr>
+      <h2>Upload Image</h2>
+      <input type="file" id="file"><button id="uploadBtn">Upload</button>
+      <div id="uploadResult"></div>
+    </div>
+  </div>
+
+  <script>
+    const headers = () => {
+      const pass = sessionStorage.getItem('admin_pass');
+      return pass ? { 'x-admin-pass': pass } : {};
+    };
+    document.getElementById('login').addEventListener('click', () => {
+      const p = document.getElementById('pass').value;
+      if (!p) return alert('enter password');
+      sessionStorage.setItem('admin_pass', p);
+      document.getElementById('app').style.display = 'block';
+    });
+    document.getElementById('savePost').addEventListener('click', async () => {
+      const title = document.getElementById('title').value;
+      const slug = document.getElementById('slug').value;
+      const excerpt = document.getElementById('excerpt').value;
+      const content = document.getElementById('editor').innerHTML;
+      const res = await fetch('/api/posts', {
+        method:'POST',
+        headers: { 'Content-Type':'application/json', ...headers() },
+        body: JSON.stringify({ title, slug, excerpt, content })
+      });
+      const j = await res.json();
+      if (j.id) alert('saved');
+      else alert('error');
+    });
+    document.getElementById('uploadBtn').addEventListener('click', async () => {
+      const f = document.getElementById('file').files[0];
+      if (!f) return alert('select file');
+      const fd = new FormData();
+      fd.append('file', f);
+      const res = await fetch('/api/upload', { method:'POST', body: fd, headers: headers() });
+      const j = await res.json();
+      if (j.url) document.getElementById('uploadResult').innerText = j.url;
+      else document.getElementById('uploadResult').innerText = 'error';
+    });
+  </script>
+</body>
+</html>
